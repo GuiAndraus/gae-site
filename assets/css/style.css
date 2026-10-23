@@ -1,0 +1,389 @@
+/* =========================================================
+   GAE Construtora e Engenharia — estilos do site
+   Cores, fontes e medidas principais ficam nas variáveis abaixo.
+   ========================================================= */
+
+:root {
+  --azul: #2e5c77;          /* destaque (ex.: "250+") */
+  --escuro: #24303a;        /* fundo do rodapé e seções escuras */
+  --azul-claro: #e8f1f8;    /* fundo "Nossos Serviços" */
+  --titulo: #1d1e20;
+  --titulo-forte: #0d141a;
+  --texto: #56585e;
+  --branco: #ffffff;
+  --whatsapp: #008361;
+
+  --largura: 1224px;
+  --raio: 20px;
+  --header-h: 106px;
+  --fonte: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+  color: var(--texto);
+  background: var(--branco);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: var(--titulo);
+}
+h1 { font-size: 48px; line-height: 1.3; }
+h3 { font-size: 48px; }
+h5 { font-size: 24px; }
+h6 { font-size: 20px; }
+h5 strong, h6 strong { font-weight: 700; }
+p { margin: 0; }
+
+.container {
+  width: 100%;
+  max-width: calc(var(--largura) + 32px);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.secao { padding: 80px 0; }
+.secao--escura { background: var(--escuro); }
+.secao--escura h1, .secao--escura h3, .secao--escura h5, .secao--escura p { color: var(--branco); }
+.secao--clara { background: var(--azul-claro); }
+
+.centro { text-align: center; }
+.justificado { text-align: justify; }
+.texto-preto { color: #000; }
+
+/* ---------- Cabeçalho ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--branco);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  height: var(--header-h);
+  margin: 0 auto;
+  padding: 30px 16px;
+}
+.header__logo img { width: 263px; height: auto; }
+.nav { display: flex; align-items: center; gap: 32px; }
+.nav__links { display: flex; gap: 32px; margin: 0; padding: 0; list-style: none; }
+.nav__links a {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--titulo-forte);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.nav__links a:hover, .nav__links a[aria-current="page"] { border-bottom-color: var(--titulo-forte); }
+.social { display: flex; align-items: center; gap: 20px; }
+.social a { display: flex; color: #000; }
+.social a:hover { color: #3a3a3a; }
+.social svg { width: 20px; height: 20px; }
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--titulo-forte);
+}
+.menu-btn svg { width: 26px; height: 26px; display: block; }
+
+/* ---------- Hero (Home) ---------- */
+.hero {
+  position: relative;
+  min-height: 753px;
+  padding: 80px 0;
+  background: url("../img/hero-galpao.jpg") center / cover no-repeat;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.hero .container { position: relative; }
+.hero h1 { color: var(--branco); text-align: center; max-width: 1018px; margin: 0 auto; }
+.hero__boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 106px;
+}
+.hero__box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 38px 38px 30px;
+  color: var(--branco);
+}
+.hero__box h6 { color: var(--branco); text-align: center; margin-bottom: 16px; }
+.hero__box ul { margin: 0; padding-left: 20px; }
+.hero__box li { color: var(--branco); }
+
+/* ---------- Quem somos (Home) ---------- */
+.quem-somos {
+  display: grid;
+  grid-template-columns: 490px 1fr;
+  column-gap: 172px;
+  align-items: start;
+}
+.quem-somos h3 { margin-bottom: 8px; white-space: nowrap; }
+.quem-somos .texto p { line-height: 1.73; }
+.quem-somos .texto p + p { margin-top: 27px; }
+.quem-somos img { width: 100%; height: 480px; object-fit: cover; border-radius: var(--raio); }
+.stat { margin: 85px 0 0 10px; }
+.stat h3 { color: var(--azul); }
+
+/* ---------- Cartões com imagem e caixa branca ---------- */
+.cards { display: grid; gap: 40px 12px; }
+.cards--2 { grid-template-columns: repeat(2, 1fr); }
+.cards--3 { grid-template-columns: repeat(3, 1fr); }
+.card { position: relative; }
+.card img { width: 100%; height: 304px; object-fit: cover; border-radius: var(--raio); }
+.card__caixa {
+  position: relative;
+  min-height: 200px;
+  margin: -40px 32px 0;
+  padding: 28px 24px 24px;
+  background: var(--branco);
+  text-align: center;
+}
+.card__caixa h6 { color: var(--titulo-forte); margin-bottom: 25px; }
+.cards--2 .card__caixa h6, .cards--2 .card__caixa p { max-width: 400px; margin-left: auto; margin-right: auto; }
+.cards--3 .card__caixa { margin: -40px 0 0; padding: 40px 47px 24px; text-align: left; }
+.cards--3 .card__caixa h6 { margin-bottom: 15px; }
+.card__caixa p { color: var(--texto); }
+
+/* ---------- Contato (formulário) ---------- */
+.contato {
+  display: grid;
+  grid-template-columns: 606px 1fr;
+  column-gap: 115px;
+}
+.contato > img { width: 100%; height: 664px; object-fit: cover; border-radius: var(--raio); }
+.contato__form { padding-top: 58px; }
+.contato__form h3 { font-size: 32px; line-height: 1.3; color: #000; margin-bottom: 8px; }
+.form label { display: block; margin: 15px 0 6px; font-size: 14px; color: #000; line-height: 1.3; }
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font: inherit;
+  font-size: 16px;
+  color: #000;
+  background: var(--branco);
+  border: 1px solid #b8c0cc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form input:hover, .form textarea:hover, .form input:focus, .form textarea:focus { border-color: #000; }
+.form textarea { height: 100px; resize: vertical; }
+.form .hp { display: none; }
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 16px 40px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--branco);
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn:hover { background: #1d1e20; }
+.btn:disabled { opacity: 0.6; cursor: wait; }
+.form__msg { margin-top: 16px; font-size: 15px; color: #000; }
+.form__msg--erro { color: #b00020; }
+
+/* ---------- Linhas imagem + texto (Serviços) ---------- */
+.linhas { display: grid; gap: 80px; margin-top: 92px; }
+.linha {
+  display: grid;
+  grid-template-columns: 606px 1fr;
+  column-gap: 115px;
+  align-items: start;
+}
+.linha img { width: 100%; height: 360px; object-fit: cover; border-radius: var(--raio); }
+.linha h5 { margin-bottom: 24px; }
+.linha--grande h5 { font-size: 28px; line-height: 1.3; margin-bottom: 16px; }
+.subtitulo { max-width: 477px; margin-top: 22px; }
+
+/* ---------- Sobre ---------- */
+.duas-colunas {
+  display: grid;
+  grid-template-columns: repeat(2, 503px);
+  column-gap: 115px;
+  margin-top: 46px;
+}
+.duas-colunas h6 { color: var(--titulo-forte); margin-bottom: 16px; }
+.localizacao p.intro { max-width: 503px; margin-top: 16px; }
+.localizacao h6 { font-size: 16px; line-height: 1.3; color: var(--titulo-forte); margin-top: 49px; }
+.localizacao address { font-style: normal; margin-top: 12px; }
+.mapa {
+  width: 100%;
+  max-width: 588px;
+  height: 306px;
+  margin-top: 46px;
+  border: 0;
+  background: #f1f2f6;
+}
+
+/* ---------- Portfólio ---------- */
+.titulo-pagina { font-weight: 600; }
+.em-construcao { position: relative; width: 480px; max-width: 100%; margin: 116px auto 0; }
+.em-construcao img { width: 100%; height: 320px; object-fit: cover; }
+.em-construcao h3 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+.depoimentos {
+  position: relative;
+  padding: 117px 0 80px;
+  min-height: 459px;
+  background: url("../img/depoimentos-fundo.jpg") center / cover no-repeat;
+}
+.depoimentos::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45); }
+.depoimentos .container { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
+.depoimento { text-align: center; color: var(--branco); max-width: 503px; margin: 0 auto; }
+.depoimento .estrelas { font-size: 20px; line-height: 1.3; color: var(--branco); }
+.depoimento blockquote { margin: 16px 0 0; font-size: 18px; }
+.depoimento img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; margin: 43px auto 8px; }
+
+/* ---------- Rodapé ---------- */
+.footer { background: var(--escuro); color: var(--branco); padding: 70px 0 40px; min-height: 368px; }
+.footer__topo { display: flex; align-items: center; gap: 48px; }
+.footer h5 { color: var(--branco); }
+.footer .social { gap: 32px; }
+.footer .social a, .footer .social a:hover { color: var(--branco); }
+.footer .social svg { width: 34px; height: 34px; }
+.footer__chamada { font-size: 14px; line-height: 1.3; margin-top: 22px; }
+.footer__contatos { margin-top: 40px; }
+.footer__contatos a { text-decoration: none; }
+.footer__contatos a:hover { text-decoration: underline; }
+.footer__copy { font-size: 14px; line-height: 1.3; margin-top: 70px; }
+
+/* ---------- Botão WhatsApp ---------- */
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: var(--branco);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+.whatsapp:hover { transform: scale(1.06); }
+.whatsapp svg { width: 34px; height: 34px; }
+
+/* ---------- Animação ao rolar ---------- */
+.revelar { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.revelar.visivel { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .revelar { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+@media (max-width: 1240px) {
+  .quem-somos { grid-template-columns: 1fr 1fr; column-gap: 64px; }
+  .contato { grid-template-columns: 1fr 1fr; column-gap: 64px; }
+  .linha { grid-template-columns: 1fr 1fr; column-gap: 64px; }
+  .duas-colunas { grid-template-columns: 1fr 1fr; column-gap: 64px; }
+}
+
+/* =========================================================
+   Celular
+   ========================================================= */
+@media (max-width: 920px) {
+  :root { --header-h: 66px; }
+  h3 { font-size: 32px; }
+  .quem-somos h3 { white-space: normal; }
+  .secao { padding: 56px 0; }
+
+  .header__inner { padding: 12px 16px; }
+  .header__logo img { width: 130px; }
+  .menu-btn { display: block; }
+  .nav {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 24px 16px 28px;
+    background: var(--branco);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    display: none;
+  }
+  .nav.aberto { display: flex; }
+  .nav__links { flex-direction: column; align-items: flex-end; gap: 20px; }
+
+  .hero { min-height: 0; padding: 56px 0; }
+  .hero h1 { font-size: 24px; }
+  .hero__boxes { grid-template-columns: 1fr; gap: 40px; margin-top: 56px; }
+
+  .quem-somos, .contato, .linha, .duas-colunas, .cards--2, .cards--3 { grid-template-columns: 1fr; }
+  .quem-somos img { height: 264px; margin-top: 40px; }
+  .stat { margin: 48px 0 0; }
+  .cards { gap: 40px; margin-top: 48px !important; }
+  .card img { height: 224px; }
+  .card__caixa { margin: -40px 10px 0; }
+
+  .contato > img { height: 264px; order: 2; margin-top: 40px; }
+  .contato__form { padding-top: 0; }
+
+  .linhas { gap: 48px; margin-top: 40px; }
+  .linha img { height: 264px; margin-bottom: 16px; }
+  .linha--grande h5 { font-size: 24px; }
+
+  .titulo-servicos { font-size: 32px; }
+  .duas-colunas { row-gap: 40px; }
+  .em-construcao { margin-top: 40px; }
+  .em-construcao h3 { font-size: 18px; }
+  .depoimentos { padding: 80px 0 56px; }
+  .depoimentos .container { grid-template-columns: 1fr; gap: 72px; }
+  .titulo-pagina { font-size: 32px; }
+
+  .footer { padding: 40px 0; }
+  .footer__topo { flex-direction: column; align-items: flex-start; gap: 24px; }
+}
