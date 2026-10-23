@@ -268,7 +268,7 @@ p { margin: 0; }
   background: var(--escuro);
   border-radius: var(--raio);
 }
-.responsavel img { width: 100%; height: auto; align-self: end; }
+.responsavel img { width: 100%; height: auto; align-self: end; padding: 36px 0 0 28px; }
 .responsavel__texto { padding: 56px 56px 56px 0; align-self: center; color: var(--branco); }
 .responsavel__texto h3 { color: var(--branco); font-size: 40px; }
 .responsavel__rotulo { text-transform: uppercase; letter-spacing: 0.12em; font-size: 14px; font-weight: 600; color: #f08a4b; margin-bottom: 8px; }
@@ -431,7 +431,7 @@ p { margin: 0; }
 
   .titulo-servicos { font-size: 32px; }
   .responsavel { grid-template-columns: 1fr; }
-  .responsavel img { order: 2; width: 75%; margin: 0; }
+  .responsavel img { order: 2; width: 80%; margin: 0 auto; padding: 24px 0 0; }
   .responsavel__texto { padding: 40px 24px 8px; }
   .responsavel__texto h3 { font-size: 30px; }
   .duas-colunas { row-gap: 40px; }
