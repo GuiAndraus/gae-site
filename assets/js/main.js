@@ -28,6 +28,27 @@ if ('IntersectionObserver' in window) {
   revelar.forEach((el) => el.classList.add('visivel'));
 }
 
+// Ampliar imagens do portfólio
+const links = document.querySelectorAll('a.ampliar');
+if (links.length) {
+  const caixa = document.createElement('div');
+  caixa.className = 'lightbox';
+  caixa.innerHTML = '<button aria-label="Fechar">&times;</button><img alt="">';
+  document.body.appendChild(caixa);
+  const foto = caixa.querySelector('img');
+  const fechar = () => caixa.classList.remove('aberto');
+  links.forEach((a) => {
+    a.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      foto.src = a.href;
+      foto.alt = a.querySelector('img').alt;
+      caixa.classList.add('aberto');
+    });
+  });
+  caixa.addEventListener('click', fechar);
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') fechar(); });
+}
+
 // Formulário de contato (enviado por e-mail via FormSubmit)
 const form = document.querySelector('#form-contato');
 if (form) {
