@@ -259,6 +259,23 @@ p { margin: 0; }
   background: #f1f2f6;
 }
 
+.responsavel {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  align-items: end;
+  column-gap: 64px;
+  overflow: hidden;
+  background: var(--escuro);
+  border-radius: var(--raio);
+}
+.responsavel img { width: 100%; height: auto; align-self: end; }
+.responsavel__texto { padding: 56px 56px 56px 0; align-self: center; color: var(--branco); }
+.responsavel__texto h3 { color: var(--branco); font-size: 40px; }
+.responsavel__rotulo { text-transform: uppercase; letter-spacing: 0.12em; font-size: 14px; font-weight: 600; color: #f08a4b; margin-bottom: 8px; }
+.responsavel__crea { font-weight: 600; margin: 6px 0 20px; color: #cfd8df; }
+.responsavel .btn--claro { color: #000; background: var(--branco); border-color: var(--branco); }
+.responsavel .btn--claro:hover { background: #f0f0f0; }
+
 /* ---------- Portfólio ---------- */
 .titulo-pagina { font-weight: 600; }
 .portfolio__intro { max-width: 640px; margin: 19px auto 0; }
@@ -413,6 +430,10 @@ p { margin: 0; }
   .linha--grande h5 { font-size: 24px; }
 
   .titulo-servicos { font-size: 32px; }
+  .responsavel { grid-template-columns: 1fr; }
+  .responsavel img { order: 2; width: 75%; margin: 0; }
+  .responsavel__texto { padding: 40px 24px 8px; }
+  .responsavel__texto h3 { font-size: 30px; }
   .duas-colunas { row-gap: 40px; }
   .trabalhos--2, .trabalhos--3 { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; }
   .titulo-pagina { font-size: 32px; }
