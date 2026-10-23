@@ -266,18 +266,6 @@ p { margin: 0; }
   line-height: 1.3;
   color: #1a1a1a;
 }
-.depoimentos {
-  position: relative;
-  padding: 117px 0 80px;
-  min-height: 459px;
-  background: url("../img/depoimentos-fundo.jpg") center / cover no-repeat;
-}
-.depoimentos::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45); }
-.depoimentos .container { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
-.depoimento { text-align: center; color: var(--branco); max-width: 503px; margin: 0 auto; }
-.depoimento .estrelas { font-size: 20px; line-height: 1.3; color: var(--branco); }
-.depoimento blockquote { margin: 16px 0 0; font-size: 18px; }
-.depoimento img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; margin: 43px auto 8px; }
 
 /* ---------- Rodapé ---------- */
 .footer { background: var(--escuro); color: var(--branco); padding: 70px 0 40px; min-height: 368px; }
@@ -380,8 +368,6 @@ p { margin: 0; }
   .duas-colunas { row-gap: 40px; }
   .em-construcao { margin-top: 40px; }
   .em-construcao h3 { font-size: 18px; }
-  .depoimentos { padding: 80px 0 56px; }
-  .depoimentos .container { grid-template-columns: 1fr; gap: 72px; }
   .titulo-pagina { font-size: 32px; }
 
   .footer { padding: 40px 0; }

@@ -1,3 +1,7 @@
+// Ano atual no rodapé
+const ano = document.getElementById('ano');
+if (ano) ano.textContent = new Date().getFullYear();
+
 // Menu do celular
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
