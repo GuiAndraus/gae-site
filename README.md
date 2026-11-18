@@ -10,7 +10,7 @@ sobre/index.html      → Sobre
 servicos/index.html   → Serviços
 portfolio/index.html  → Portfólio
 assets/css/style.css  → cores, fontes e layout de todas as páginas
-assets/js/main.js     → menu do celular, animações e formulário
+assets/js/main.js     → menu do celular, animações, ampliar fotos e formulário
 assets/img/           → imagens usadas no site (otimizadas para web)
 assets/originais/     → imagens em resolução original (backup, não são carregadas pelo site)
 CNAME                 → domínio usado pelo GitHub Pages
@@ -25,9 +25,11 @@ CNAME                 → domínio usado pelo GitHub Pages
 2. No GitHub, entre em `assets/img/` → *Add file* → *Upload files*.
 3. Na página, troque o nome do arquivo no `src="..."` da imagem.
 
-**Adicionar uma obra na página Serviços:** copie um bloco `<div class="linha ...">...</div>` inteiro em `servicos/index.html`, cole logo abaixo e troque imagem, título e texto.
+**Adicionar uma obra (Serviços ou Portfólio):** copie um bloco `<figure>...</figure>` inteiro da galeria, cole logo abaixo e troque imagem, título e legenda.
 
-**Cabeçalho e rodapé** se repetem nas 4 páginas. Se mudar telefone, e-mail ou redes sociais, altere nos 4 arquivos (Ctrl+F ajuda).
+**Cores:** azul-marinho `#012c57` e laranja `#f18048` (as do logo), definidas no topo de `assets/css/style.css`.
+
+**Cabeçalho, formulário de contato e rodapé** se repetem nas 4 páginas. Se mudar telefone, e-mail ou redes sociais, altere nos 4 arquivos (Ctrl+F ajuda).
 
 ## Publicação (primeira vez)
 
@@ -40,9 +42,10 @@ CNAME                 → domínio usado pelo GitHub Pages
    - **Não mexa nos registros MX/TXT** — eles mantêm o e-mail funcionando.
 5. Só desative o site no Construtor da Hostinger depois que o novo estiver no ar.
 
-## Formulário de contato
+## Formulário de orçamento
 
-Envia as mensagens para `contato@gaeconstrutora.com.br` pelo serviço gratuito [FormSubmit](https://formsubmit.co). Na **primeira** mensagem enviada pelo site, o FormSubmit manda um e-mail de ativação para esse endereço — é preciso clicar em *Activate* uma única vez.
+Não envia nada pela internet: monta a mensagem (nome, serviço, cidade, detalhes) e abre o WhatsApp da GAE
+(15) 99779-1768 com o texto pronto. O cliente revisa e envia. O número fica em `assets/js/main.js`.
 
 ## Testar no computador
 
